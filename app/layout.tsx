@@ -33,7 +33,7 @@ export default function RootLayout({
           >
             <Navigation />
             <main className="container">{children}</main>
-            <Footer />
+            {/* <Footer /> */}
           </ThemeProvider>
         </body>
       </html>
