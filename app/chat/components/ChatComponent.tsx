@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { unstable_noStore as noStore } from 'next/cache';
 import { useChat } from 'ai/react'
 import Textarea from 'react-textarea-autosize'
 import Markdown from "react-markdown"
