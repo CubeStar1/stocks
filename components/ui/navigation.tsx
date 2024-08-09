@@ -31,7 +31,7 @@ const NAVIGATION = [
   { title: "Markets", href: "/" },
   { title: "Screener", href: "/screener" },
   { title: "Chat", href: "/chat" },
-  { title: "About", href: "/Hero" }
+  { title: "Docs", href: "/documents" }
 ]
 
 export default function Navigation() {
