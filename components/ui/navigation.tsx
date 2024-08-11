@@ -26,6 +26,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import { Button } from "./button"
+import ManageProfile from "@/components/supaauth/manage-profile";
+import UserProfile from '@/components/supaauth/user-profile'
 
 const NAVIGATION = [
   { title: "Markets", href: "/" },
@@ -40,7 +42,7 @@ export default function Navigation() {
   const [menuItem, setMenuItem] = useState("Markets")
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-black/50 backdrop-blur transition duration-500 ease-in-out">
+    <header className="sticky top-0 z-50 w-full bg-background/50 backdrop-blur transition duration-500 ease-in-out">
       <div className="container">
         <div className="flex w-full flex-row justify-between py-4">
           <div>{pathname !== "/" && <GoBack />}</div>
@@ -93,6 +95,7 @@ export default function Navigation() {
             <div className="flex flex-row items-center gap-2">
               <CommandMenu />
               <ThemeToggle />
+              <UserProfile/>
             </div>
             
           </div>
