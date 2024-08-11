@@ -5,6 +5,7 @@ import { ViewTransitions } from "next-view-transitions"
 import { ThemeProvider } from "@/components/ui/theme-provider"
 import Navigation from "@/components/ui/navigation"
 import Footer from "@/components/ui/footer"
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,6 +32,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+                    <Image src="/bghero.webp" alt="hero" width={100} height={100} className="pointer-events-none absolute -top-20 left-0 right-0 z-0 mx-auto hidden h-full w-full select-none md:block" />
+
             <Navigation />
             <main className="container">{children}</main>
             {/* <Footer /> */}

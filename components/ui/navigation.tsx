@@ -31,7 +31,8 @@ const NAVIGATION = [
   { title: "Markets", href: "/" },
   { title: "Screener", href: "/screener" },
   { title: "Chat", href: "/chat" },
-  { title: "Docs", href: "/documents" }
+  { title: "Docs", href: "/documents" },
+  { title: "About", href: "/hero" }
 ]
 
 export default function Navigation() {
@@ -39,7 +40,7 @@ export default function Navigation() {
   const [menuItem, setMenuItem] = useState("Markets")
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-40 w-full bg-black/50 backdrop-blur transition duration-500 ease-in-out">
       <div className="container">
         <div className="flex w-full flex-row justify-between py-4">
           <div>{pathname !== "/" && <GoBack />}</div>
