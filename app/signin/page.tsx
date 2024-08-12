@@ -6,7 +6,7 @@ import Signin from '@/components/supaauth/signin'
 
 const page = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-[calc(100vh-6rem)]">
         <Signin />
     </div>
   )
