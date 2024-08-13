@@ -10,132 +10,136 @@ import {
 	Preview,
 	Section,
 	Text,
-} from "@react-email/components";
-import * as React from "react";
-
-interface SupaAuthVerifyEmailProp {
+  } from "@react-email/components";
+  import * as React from "react";
+  
+  interface StocksEmailProps {
 	verificationCode?: string;
-}
-
-export default function SupaAuthVerifyEmail({
+  }
+  
+  export default function StocksEmail({
 	verificationCode = "596853",
-}: SupaAuthVerifyEmailProp) {
+  }: StocksEmailProps) {
 	return (
-		<Html>
-			<Head />
-			<Preview>Supauth Email Verification</Preview>
-			<Body style={main}>
-				<Container style={container}>
-					<Section style={coverSection}>
-						<Section style={imageSection}></Section>
-						<Section style={upperSection}>
-							<Heading style={h1}>
-								SupaAuth Verify your email address
-							</Heading>
-							<Text style={mainText}>
-								{
-									"Thanks for starting the new account creation process. We want to make sure it's really you. Please enter the following verification code when prompted. If you don&apos;t want to create an account, you can ignore this message."
-								}
-							</Text>
-							<Section style={verificationSection}>
-								<Text style={verifyText}>
-									Verification code
-								</Text>
-
-								<Text style={codeText}>{verificationCode}</Text>
-								<Text style={validityText}>
-									(This code is valid for 1 hour)
-								</Text>
-							</Section>
-						</Section>
-					</Section>
-				</Container>
-			</Body>
-		</Html>
+	  <Html>
+		<Head />
+		<Preview>Stocks App - Verify Your Email</Preview>
+		<Body style={main}>
+		  <Container style={container}>
+			<Section style={coverSection}>
+			  <Section style={imageSection}>
+				<Img
+				  src="/stocktickr-logo.png"
+				  width={100}
+				  height={100}
+				  alt="Stocks Logo"
+				/>
+			  </Section>
+			  <Section style={upperSection}>
+				<Heading style={h1}>Verify your email address</Heading>
+				<Text style={mainText}>
+				  Thanks for signing up for Stocks, your personal stock tracking assistant. To get started, please verify your email address by entering the following code:
+				</Text>
+				<Section style={verificationSection}>
+				  <Text style={codeText}>{verificationCode}</Text>
+				  <Text style={validityText}>
+					(This code is valid for 1 hour)
+				  </Text>
+				</Section>
+				<Hr style={hr} />
+				<Text style={footerText}>
+				  If you didn't request this email, you can safely ignore it.
+				</Text>
+			  </Section>
+			</Section>
+		  </Container>
+		</Body>
+	  </Html>
 	);
-}
-
-const main = {
-	backgroundColor: "#fff",
-	color: "#212121",
-};
-
-const container = {
-	padding: "20px",
+  }
+  
+  const main = {
+	backgroundColor: "#1a1a1a",
+	color: "#ffffff",
+  };
+  
+  const container = {
 	margin: "0 auto",
-	backgroundColor: "#eee",
-};
-
-const h1 = {
-	color: "#333",
-	fontFamily:
-		"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-	fontSize: "20px",
+	padding: "20px 0 48px",
+  };
+  
+  const coverSection = {
+	backgroundColor: "#222222",
+	borderRadius: "8px",
+	overflow: "hidden",
+  };
+  
+  const imageSection = {
+	backgroundColor: "#333333",
+	padding: "40px 0",
+	textAlign: "center" as const,
+  };
+  
+  const upperSection = {
+	padding: "40px",
+  };
+  
+  const h1 = {
+	color: "#00ff88",
+	fontFamily: 
+	  "'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+	fontSize: "28px",
 	fontWeight: "bold",
-	marginBottom: "15px",
-};
-
-const link = {
-	color: "#2754C5",
+	margin: "0 0 20px",
+	textAlign: "center" as const,
+  };
+  
+  const mainText = {
+	color: "#ffffff",
 	fontFamily:
-		"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+	  "'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+	fontSize: "16px",
+	lineHeight: "24px",
+	margin: "0 0 40px",
+	textAlign: "center" as const,
+  };
+  
+  const verificationSection = {
+	backgroundColor: "#333333",
+	borderRadius: "8px",
+	padding: "32px",
+	textAlign: "center" as const,
+  };
+  
+  const codeText = {
+	color: "#00ff88",
+	fontFamily: "monospace",
+	fontSize: "48px",
+	fontWeight: "bold",
+	letterSpacing: "8px",
+	margin: "0 0 16px",
+  };
+  
+  const validityText = {
+	color: "#999999",
+	fontFamily:
+	  "'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
 	fontSize: "14px",
-	textDecoration: "underline",
-};
-
-const text = {
-	color: "#333",
+	margin: "0",
+  };
+  
+  const hr = {
+	border: "none",
+	borderTop: "1px solid #444444",
+	margin: "40px 0",
+  };
+  
+  const footerText = {
+	color: "#999999",
 	fontFamily:
-		"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+	  "'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
 	fontSize: "14px",
-	margin: "24px 0",
-};
-
-const imageSection = {
-	backgroundColor: "#252f3d",
-	display: "flex",
-	padding: "20px 0",
-	alignItems: "center",
-	justifyContent: "center",
-};
-
-const coverSection = { backgroundColor: "#fff" };
-
-const upperSection = { padding: "25px 35px" };
-
-const lowerSection = { padding: "25px 35px" };
-
-const footerText = {
-	...text,
-	fontSize: "12px",
-	padding: "0 20px",
-};
-
-const verifyText = {
-	...text,
-	margin: 0,
-	fontWeight: "bold",
+	lineHeight: "24px",
+	margin: "0",
 	textAlign: "center" as const,
-};
-
-const codeText = {
-	...text,
-	fontWeight: "bold",
-	fontSize: "36px",
-	margin: "10px 0",
-	textAlign: "center" as const,
-};
-
-const validityText = {
-	...text,
-	margin: "0px",
-	textAlign: "center" as const,
-};
-
-const verificationSection = {
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-};
-
-const mainText = { ...text, marginBottom: "14px" };
+  };
