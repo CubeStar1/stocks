@@ -25,6 +25,7 @@ import {
 import { useRouter } from "next/navigation"
 import { createSupabaseBrowser } from "@/lib/supabase/client"
 import { Button } from "./button"
+import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 
 const NAVIGATION = [
   { title: "Markets", href: "/" },
@@ -54,7 +55,7 @@ export default function Navigation() {
     <header className="sticky top-0 z-50 w-full bg-background/50 backdrop-blur transition duration-500 ease-in-out">
       <div className="container">
         <div className="flex w-full items-center justify-between py-4 ">
-          <Link href="/" className="hidden md:flex text-2xl font-bold">
+          <Link href="/" className="hidden sm:flex text-2xl font-bold lg:w-[220px]">
             Stocks
           </Link>
 
@@ -80,7 +81,12 @@ export default function Navigation() {
             <div className="md:hidden">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline">Navigate</Button>
+                  <Button 
+                  variant="outline"
+                  className=""
+                  >
+                    <HamburgerMenuIcon/>
+                    </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-22">
                   <DropdownMenuRadioGroup value={menuItem} onValueChange={setMenuItem}>
@@ -110,7 +116,7 @@ export default function Navigation() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-            <CommandMenu />
+            <CommandMenu/>
             <ThemeToggle />
             <Button
              onClick={signout}

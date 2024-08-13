@@ -47,7 +47,7 @@ export default function CommandMenu() {
         onClick={() => setOpen(true)}
         variant="outline"
         size={"sm"}
-        className="group"
+        className="group w-[calc(100vw-12.5rem)] sm:w-[10rem]"
       >
         <p className="flex gap-10 text-sm text-muted-foreground group-hover:text-foreground">
           Search...
