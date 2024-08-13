@@ -53,12 +53,12 @@ export default function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/50 backdrop-blur transition duration-500 ease-in-out">
       <div className="container">
-        <div className="flex w-full items-center justify-between py-4">
-          <Link href="/" className="text-2xl font-bold">
+        <div className="flex w-full items-center justify-between py-4 ">
+          <Link href="/" className="hidden md:flex text-2xl font-bold">
             Stocks
           </Link>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex space-x-4">
             <NavigationMenu>
               <NavigationMenuList>
                 {NAVIGATION.map((item) => (
@@ -82,21 +82,28 @@ export default function Navigation() {
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline">Navigate</Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-28">
+                <DropdownMenuContent className="w-22">
                   <DropdownMenuRadioGroup value={menuItem} onValueChange={setMenuItem}>
-                    <NavigationMenu>
-                      <NavigationMenuList className="flex-col">
+                    <NavigationMenu className="w-full">
+                      <NavigationMenuList className="flex-col justify-start items-start w-full">
                         {NAVIGATION.map((item) => (
                           <NavigationMenuItem key={item.title}>
-                            <Link href={item.href} legacyBehavior passHref>
-                              <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                              >
+                            <Link href={item.href} legacyBehavior passHref className=""> 
+                              <Button variant="ghost" className="w-full">
                                 {item.title}
-                              </NavigationMenuLink>
+                              </Button>
                             </Link>
                           </NavigationMenuItem>
                         ))}
+
+                        <NavigationMenuItem>
+                          <Button
+                           onClick={signout}
+                           className="w-full"
+                          >
+                            Sign out
+                          </Button>
+                        </NavigationMenuItem>
                       </NavigationMenuList>
                     </NavigationMenu>
                   </DropdownMenuRadioGroup>
@@ -105,7 +112,12 @@ export default function Navigation() {
             </div>
             <CommandMenu />
             <ThemeToggle />
-            <Button onClick={signout}>{isSignOut ? "Signing out..." : "Sign out"}</Button>
+            <Button
+             onClick={signout}
+             className="hidden lg:block"
+             >
+              {isSignOut ? "Signing out..." : "Sign out"}
+             </Button>
           </div>
         </div>
       </div>
